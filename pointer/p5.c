@@ -23,8 +23,20 @@ int main() {
 
      printf("%p %d %p\n", ptr3, *ptr3, &ptr3);
 
+     if (ptr1 == ptr3) {
+          printf("Same\n");
+     } else {
+          printf("different\n");
+     }
 
+     double d = 3.14;
+     double* ptr_d = &d;
 
+     if (ptr1 == (int*)ptr_d) {
+          printf("Same\n");
+     } else {
+          printf("Different\n");
+     }
 
-    
+     return 0;   
 }
