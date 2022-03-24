@@ -9,7 +9,7 @@ int main() {
 
     for (int j = 0; j < 2; ++j) {
         for (int i = 0; i < 3; ++i) {
-            printf("%d(==%d) ", parr[i][j], *(parr[j] + i));
+            printf("%d(==%d, %d) ", parr[i][j], *(parr[j] + i), *(*(parr+j)+i));
         }
         printf("\n");
     }
