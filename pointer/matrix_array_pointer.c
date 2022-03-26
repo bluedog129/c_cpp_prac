@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 int main() {
-    float arr2d[2][4] = { (1.0f, 2.0f, 3.0f, 4.0f), {5.0f, 6.0f, 7.0f, 8.0f}};
+    float arr2d[2][4] = { {1.0f, 2.0f, 3.0f, 4.0f}, {5.0f, 6.0f, 7.0f, 8.0f}};
 
     printf("%u\n", (unsigned)arr2d);
     printf("%u\n", (unsigned)arr2d[0]);
@@ -28,15 +28,24 @@ int main() {
     printf("\n");
 
     for (int j =0; j < 2; ++j) {
-        printf("[%d] = %u, %u, %u\n", j, (unsigned)(arr2d[j]), (unsigned) *(arr2d + j));
+        printf("[%d] = %u, %u\n", j, (unsigned)(arr2d[j]), (unsigned) *(arr2d + j));
 
         for (int i = 0; i< 4; ++i) {
-            printf("[%d][%d] = %f, %f\n", j, i, arr2d[j][i], *(*(arr2d +j)+i));
+            printf("[%d][%d] = %f, %f\n", j, i, arr2d[j][i], *(*(arr2d + j)+i));
 
             *(*(arr2d +j)+i) += 1.0f; // arr2d[j][i] += 1.0f;
         }
     }
     printf("\n");
+
+    float (*pa)[4]; // a SINGLE pointer to an array of 4 ints
+    float* ap[2]; // an array of TWO pointers-to-int
+
+    printf("%zu\n", sizeof(pa));  // 8 in x64
+    printf("%zu\n", sizeof(ap));  // 16 in x64
+    printf("\n");
+
+    pa = arr2d;
 
     return 0;
 }
