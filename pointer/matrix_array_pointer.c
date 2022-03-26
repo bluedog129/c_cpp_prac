@@ -47,5 +47,11 @@ int main() {
 
     pa = arr2d;
 
+    // pa[0] = arr2d[0]; // error
+    // pa[1] = arr2d[1]; // error
+    ap[0] = arr2d[0];
+    ap[1] = arr2d[1];
+
+
     return 0;
 }
