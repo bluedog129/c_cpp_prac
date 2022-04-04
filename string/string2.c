@@ -26,9 +26,9 @@ int main() {
         printf("%c", mythings[0][i]);
     }
     printf("\n");
-    
-    for (int i = 0; i<100; i++) {
-        printf("%c", yourthings[0][i]);
+
+    for (int i = 0; i<200; i++) {
+        printf("%d", (int)yourthings[0][i]);
     }
     printf("\n");
 
