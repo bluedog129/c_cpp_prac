@@ -30,8 +30,7 @@ int main(void) {
         int isCycle = 1;
         for (int i = 1; i <= n; i++)
             if (visited[i] != value[i])
-                isCycle = 0; // 방문한 곳과 입력 값이 다르다면
-        // 사이클이 아니다
+                isCycle = 0;
         
         if (isCycle) {
             for (int i = 1; i <= n; i++) {
