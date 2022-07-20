@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 
 int		ft_strlen(char *str)
 {
@@ -19,13 +20,22 @@ char	*ft_strdup(char *src)
 	i = 0;
 	len = ft_strlen(src);
 	copy = (char*)malloc(sizeof(char) * len + 1);
+
 	if (copy == NULL)
 		return (NULL);
+
 	while (src[i] != '\0')
 	{
 		copy[i] = src[i];
 		i++;
 	}
 	copy[i] = '\0';
+
 	return (copy);
+}
+
+int main() {
+	char str[10] = "hahahahaha";
+	printf("%s\n", ft_strdup(str));
+	printf("%p", ft_strdup(str));
 }
