@@ -1,4 +1,4 @@
-#include <iostream>
+#include <stdio.h>
 #include <string.h>
 
 using namespace std;
@@ -22,27 +22,27 @@ int main() {
     bool flag = false;
     int n = 1;
 
-    // 에라스토테네스로 소수인 수들 만들어 놓음
+    // 에라스토테네스로 소수인 수들 체크 해놓음
     bool check[1000001];
     memset(check, 1, sizeof(check));
     erasto(check);
 
     while(n) {
         // n받고
-        cin >> n;
+        scanf("%d", &n);
 
         // 입력 받은 값을 만드는 소수들을 구한다. 
         // (n / 2 이하의 소수에서 i를 찾을 수 있음)
-        for (int i = 3; i <= n / 2; i++) {
+        for (int i = 3; i <= n / 2; i += 2) {
             if (check[i] && check[n - i]) {
-                cout <<  n << " = " << i << " + " << n - i << endl;
+                printf("%d = %d + %d\n", n, i, n - i);
                 flag = true;
                 break;
             }
         }
 
         // 답이 없는경우
-        if(!flag) cout << "Goldbach's conjecture is wrong." << '\n';
+        if(!flag) printf("Goldbach's conjecture is wrong.\n");
     }
 
     return 0;
