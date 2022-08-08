@@ -96,7 +96,7 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	int				len_to;
 	unsigned char	*b_from;
 	unsigned char	*b_to;
-
+	
 	b_from = (unsigned char *)base_from;
 	b_to = (unsigned char *)base_to;
 	if (!check_base(b_from) || !check_base(b_to))
@@ -106,7 +106,7 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	ret = (char *)malloc(sizeof(char) * (len_to + 2));
 	if (!ret)
 		return (0);
-	ret[0] = 0;
+	
 	if (dec < 0)
 	{
 		ret[0] = '-';
@@ -115,4 +115,16 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	}
 	rec_base(dec, b_to, ft_strlen(b_to), ret);
 	return (ret);
+}
+#include <stdio.h>
+int main() {
+	char *nbr = "10101";
+	char *base_from = "01";
+	char *base_to = "012345678";
+
+	char *result = ft_convert_base(nbr, base_from, base_to);
+
+	for (int i = 0; i < sizeof(result); i++) {
+		printf("%c", result[i]);
+	}
 }
