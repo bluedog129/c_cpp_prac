@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 int ft_any(char **tab, int(*f)(char*))
 {
     int     i;
@@ -14,20 +17,22 @@ int zero_check(char *nums)
     int     i;
 
     i = 0;
-    while (nums[i])
+    while(nums[i])
     {
-        if (nums[i] == '0')
+        if (nums[i] != '0')
             return 1;
-        else
-            return 0;
+        i++;
     }
     return 0;
 }
 
-#include <stdio.h>
 int main()
 {
-    char *tab[3] = {"1", "0", "0"};
+    char *tab = "001";
+    char **arr = malloc(sizeof(char *) * 2);
 
-    printf("%d", ft_any(tab, &zero_check));
+    arr[0] = tab;
+    arr[1] = 0;
+
+    printf("%d", ft_any(arr, zero_check));
 }
