@@ -37,7 +37,7 @@ void dfs(int cnt,int idx) {
 	}
 	for (int i = idx; i < e.size(); i++) {
 		arr[e[i].first][e[i].second] = 'O';
-		dfs(cnt + 1, i+1);
+		dfs(cnt + 1, i + 1);
 		arr[e[i].first][e[i].second] = 'X';
 	}
 }
