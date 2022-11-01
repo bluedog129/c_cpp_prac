@@ -27,8 +27,7 @@ void	ft_putnbr(long long nbr, int i, char *base)
 	}
 	else
 	{
-		if (nbr > i - 1)
-			ft_putnbr(nbr / i, i, base);
+		if (nbr > i - 1) ft_putnbr(nbr / i, i, base);
 		ft_putchar(base[nbr % i]);
 	}
 }
@@ -67,11 +66,10 @@ void	ft_putnbr_base(int nbr, char *base)
 	if (ft_check(base, i) == 1)
 		ft_putnbr(nbr, i, base);
 }
-/*
+
 int main()
 {
-	int nbr = -12345;
-	char base[] = "0123456789abcdef";
+	int nbr = 8;
+	char base[] = "01";
 	ft_putnbr_base(nbr, base);
 }
-*/
